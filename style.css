@@ -233,3 +233,9 @@ h1, h2, h3, h4 {
 #body-text .price {
 	font-style: normal;
 }
+
+#footer {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-style: italic;
+}
