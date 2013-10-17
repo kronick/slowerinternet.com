@@ -18,15 +18,63 @@
 
 	$(document).ready(function() {
 		$(".slider").each(function(i) {
+			var list = $(this);
+			list.attr('data-selected', '0');
 			// Hide all but first image
-			var images = $(this).children("li");
+			var images = list.children("li");
 			images.slice(1).hide();
 
-			images.click(nextSliderImage);
+			images.click(function() { goToImage(list, parseInt(list.attr('data-selected')) + 1)});
 			console.log(images);
+
+
+			var selector = $("<div class='slider-selector' />");
+			list.after(selector);
+			// Create thumbnails
+			$(images).each(function(i) {
+				var thumbnail = $("<img src='" + $(this).find("img").attr("src") + "' width='100' class='slider-thumbnail' data-index='" + i + "' />");
+				if(i == 0) thumbnail.addClass("selected");
+				selector.append(thumbnail);
+
+				thumbnail.click(goToImage);
+			});
+			
 		});
 	});
 
+	function goToImage(slider, i) {
+		var thumbnail;
+		if(typeof i != "number") {	// Clicked directly on thumbnail
+			thumbnail = $(this);
+		}
+		else {						// Clicked on big image or something else
+			i %= $(slider).children().length;
+			thumbnail = $($(slider).next().children()[i]);
+			console.log(thumbnail);
+		}
+
+		var i = thumbnail.attr("data-index");
+		var list = thumbnail.parent().prev("ul");
+		// Find li to hide and to show
+		var hide = list.children("li:visible");
+		var show = list.children("li")[i];
+		
+		if(!$(list).hasClass("transitioning")) {	// Lock to prevent multiple transitions at once
+			$(list).addClass("transitioning");
+			$(hide).fadeOut(150, function() {
+				$(show).fadeIn(150, function() {
+					$(list).removeClass("transitioning");
+				});
+			})
+
+			// Change selection
+			thumbnail.siblings('.selected').removeClass("selected");
+			thumbnail.addClass("selected");
+
+			$(list).attr('data-selected', i);
+		}
+
+	}
 	function nextSliderImage() {
 		$(this).fadeOut(300, function() {
 			if(!$(this).next().length) {
@@ -93,10 +141,11 @@
 
         <h2>Dock</h2>
         <ul class="slider">
-			<li><img src="product-photos/dock-1-small.jpg" /></li>
-			<li><img src="product-photos/dock-2-small.jpg" /></li>
-			<li><img src="product-photos/dock-3-small.jpg" /></li>
-			<li><img src="product-photos/dock-4-small.jpg" /></li>
+        	<li><img src="product-photos/dock-animated.gif" /></li>
+			<li><img src="product-photos/dock-angle-small.jpg" /></li>
+			<li><img src="product-photos/dock-docking-animated.gif" /></li>
+			<li><img src="product-photos/dock-plugs-small.jpg" /></li>
+			<li><img src="product-photos/dock-empty-small.jpg" /></li>
 		</ul>
 		<div class="description">
 			Concrete planter and phone dock with cork base.
@@ -132,7 +181,7 @@
 		</div>
 
 		<h2>Poem</h2>
-			<img src="http://www.brautigan.net/graphics/machines/machines-loudspeaker.gif" />
+			<img src="product-photos/poem-small.jpg" />
 			<div class="description">
 			A printed copy of Richard Brautigan's "All Watched Over by Machines of Loving Grace" from 1967.
 			<ul>

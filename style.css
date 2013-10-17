@@ -246,6 +246,18 @@ h1, h2, h3, h4 {
 	padding: 0;
 }
 
+.slider-selector img {
+	margin-right: 10px;
+	padding-bottom: 3px;
+	/*border-bottom: 3px solid black;*/
+	cursor: hand;
+}
+.slider-selector img.selected {
+	padding-bottom: 3px;
+	border-bottom: 3px solid  #588A37;
+	cursor: default;
+}
+
 #footer {
 	margin-top: 1em;
 	margin-bottom: 1em;
