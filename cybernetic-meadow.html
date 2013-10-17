@@ -32,7 +32,16 @@
 			list.after(selector);
 			// Create thumbnails
 			$(images).each(function(i) {
-				var thumbnail = $("<img src='" + $(this).find("img").attr("src") + "' width='100' class='slider-thumbnail' data-index='" + i + "' />");
+				var thumbnail_src;
+				if($(this).find("img").length > 0) {	// This is an image. Use it as its own thumbnail
+					thumbnail_src = $(this).find("img").attr("src");
+				}
+				else {
+					thumbnail_src = $(this).attr("data-thumbnail");
+					console.log("this");
+				}
+
+				var thumbnail = $("<img src='" + thumbnail_src + "' width='100' class='slider-thumbnail' data-index='" + i + "' />");
 				if(i == 0) thumbnail.addClass("selected");
 				selector.append(thumbnail);
 
@@ -132,7 +141,7 @@
 				<li>Solid oak base provides access to all original ports on router.</li>
 				<li>Includes a functioning <A href="http://www.amazon.com/gp/product/B008RV51EE/ref=oh_details_o00_s02_i00?ie=UTF8&psc=1">TP-LINK TL-WDR3600</a> router (compatible with OpenWRT and other firmwares)</li>
 			</ul>
-            <div class="price">$350
+            <div class="price">$320
                 <a href="http://he2.co/AB5Y7T9C1A0" target="_blank" class="helium-buy-now" data-cart-add="ROUTER-01">Add to Cart</a>
             </div>
 		</div>
@@ -146,6 +155,7 @@
 			<li><img src="product-photos/dock-docking-animated.gif" /></li>
 			<li><img src="product-photos/dock-plugs-small.jpg" /></li>
 			<li><img src="product-photos/dock-empty-small.jpg" /></li>
+			<li data-thumbnail="product-photos/dock-video-thumb.jpg"><iframe src="http://player.vimeo.com/video/77101060?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
 		</ul>
 		<div class="description">
 			Concrete planter and phone dock with cork base.
@@ -154,7 +164,7 @@
 				<li>Charging cable not included.</li>
 				<li>Waterproof cork base holds excess water as it drains from the planter</li>
 			</ul>
-            <div class="price">$85 
+            <div class="price">$70 
                 <a href="http://he2.co/KG6C8N1S7I4" target="_blank" class="helium-buy-now" data-cart-add="DOCK-01">Add to Cart</a>
 
             </div>
@@ -175,15 +185,18 @@
 				<li>Cork lined bottom</li>
                 <li>Perfect for 4" x 6" prints or smaller from <a href="http://printstud.io">printstud.io</a></li>
 			</ul>
-            <div class="price">$30 
+            <div class="price">$28 
                 <a href="http://he2.co/QG4E6Z7Q5M6" target="_blank" class="helium-buy-now" data-cart-add="JPEGS-01">Add to Cart</a>
             </div>
 		</div>
 
 		<h2>Poem</h2>
-			<img src="product-photos/poem-small.jpg" />
+		<ul class="slider">
+			<li><img src="product-photos/poem-small.jpg" /></li>
+			<li data-thumbnail="product-photos/poem-video-thumb.jpg"><iframe src="http://player.vimeo.com/video/77102850?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+		</ul>
 			<div class="description">
-			A printed copy of Richard Brautigan's "All Watched Over by Machines of Loving Grace" from 1967.
+			A printed copy of Richard Brautigan's <a href="http://www.brautigan.net/machines.html">All Watched Over by Machines of Loving Grace"</a> from 1967.
 			<ul>
 				<li>Distributed for free in accordance with the original copyright.</li>
 			</ul>
