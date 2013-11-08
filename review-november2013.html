@@ -1,7 +1,323 @@
 <html>
 <head>
-<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
-<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/_aijTyevf54tkVDLy-dlnD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/_xyN3apAT_yRRDeqB3sPRg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/OsJ2DjdpjqFRVUSto6IffD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/0ihfXUL2emPh0ROJezvraD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Ubuntu Light Italic'), local('Ubuntu-LightItalic'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/DZ_YjBPqZ88vcZCcIXm6VobN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/kbP_6ONYVgE-bLa9ZRbvvvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Ubuntu Medium Italic'), local('Ubuntu-MediumItalic'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/ohKfORL_YnhBMzkCPoIqwobN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Ubuntu Bold Italic'), local('Ubuntu-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/OMD20Sg9RTs7sUORCEN-7YbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+
+
+body {
+	font-family: "Ubuntu", sans-serif;
+	margin: 0;
+	background-color: #dad7d9;
+	text-align: center;
+}
+
+a {
+	color: #1F211C;
+	text-decoration: underline
+}
+a:hover {
+	color: #5B6853;
+	text-decoration: none;
+}
+
+@font-face { 
+	font-family: "Nevis";
+	src: url("fonts/nevis.eot");
+}
+@font-face { 
+	font-family: "Nevis";
+	src: url("fonts/NEVIS.TTF");
+}
+
+
+h1, h2, h3, h4 {
+	font-family: "Nevis", sans-serif;
+	text-transform: uppercase;	
+}
+
+#logo-banner {
+	width: 100%;
+	background-color: #1F211C;
+	font-family: "Nevis";
+	color: white;
+	text-align: center;
+	font-size: 72px;
+	text-transform: uppercase;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	line-height: 60px;
+}
+
+#logo-banner:first-line {
+	font-size: 32px;
+	line-height: 32px;
+}
+
+#logo-banner.small {
+	font-size: 32px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 28px;
+}
+#logo-banner.small:first-line {
+	font-size: 16px;
+	line-height: 16px;
+}
+
+
+#logo-banner a {
+	color: white;
+	text-decoration: none;
+}
+#logo-banner a:hover {
+	color: #DDDDDD;
+}
+
+
+#big-photo {
+	width: 100%;
+	height: 600px;
+	background-image: url("gradient-bg.png");
+	text-align: center;
+	position: relative;
+}
+#big-photo h1 {
+	font-family: "Nevis", sans-serif;
+	color: #588A37;
+	font-size: 130px;
+	line-height: 1em;
+	
+	position: absolute;
+	left: 50%;
+	margin-left: -425px;
+	top: -70px;
+	width: 850px;
+	padding-left: 40px;
+
+	display: block;
+
+	text-align: left;
+}
+
+#big-photo.twoline {
+	height: 400px;
+	overflow: hidden;
+}
+#big-photo.twoline h1 {
+	top: -20px;
+	margin-left: -490px;
+}
+
+#big-photo.threeline {
+	height: 500px;
+	overflow: hidden;
+}
+#big-photo.threeline h1 {
+	top: -20px;
+}
+
+#content-container {
+	background-color: #dad7d9;
+	width: 960px;
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+#menu {
+	width: 960px;
+	height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	display: inline-block;
+}
+
+.menu-item {
+	width: 260px;
+	height: 260px;
+	display: block;
+	float: left;
+	list-style: none;
+	margin: 10px;
+	padding: 20px;
+	font-size: 20pt;
+	line-height: 1.25em;
+	text-align: left;
+}
+
+.menu-item a {
+	font-family: "Nevis", sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: inherit;
+}
+
+.menu-item.menu-green {
+	background-color: #588A37;
+	color: white;
+}
+
+.menu-item.menu-green a {
+	color: white;
+	background-color: #588A37;
+}
+.menu-item.menu-green a:hover {
+	color: #392D23;
+}
+
+.menu-item.menu-white a {
+	color: #1F211C;
+	background-color: white;
+}
+.menu-item.menu-white a:hover {
+	color: #5B6853;
+}
+
+.menu-item.menu-white {
+	background-color: white;
+	color: #1F211C;
+}
+
+.menu-item.menu-cyberneticmeadow {
+	background-image: url(cyberneticmeadow-bg.jpg);
+}
+
+.menu-item.menu-networksnewtowns {
+	background-image: url(networksnewtowns-bg.jpg);
+}
+.menu-item.menu-principles {
+	background-image: url(principles-bg.jpg);
+}
+.menu-item.menu-review {
+	background-image: url(review-bg.jpg);
+}
+.menu-item.menu-research {
+	background-image: url(research-bg.jpg);
+}
+.menu-item.menu-freespace {
+	background-image: url(freespace-bg.jpg);
+}
+
+
+#body-text {
+	text-align: left;
+	width: 800px;
+	display: inline-block;
+	background-color: white;
+	padding: 40px;
+}
+
+#body-text h2 {
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+	color: #5B6853;
+	font-size: 30px;
+}
+
+#body-text p {
+	/* font-family: "Times New Roman";*/
+	font-weight: lighter;
+	font-size: 20px;
+	line-height: 2em;
+	margin-top: 0;
+}
+
+#body-text p.intro {
+	font-style: italic;
+	margin-bottom: 2em;
+}
+
+#body-text .description {
+	margin-top: 1em;
+	line-height: 1.25em;
+	font-style: italic;
+	font-size: 16px;
+	width: 500px;
+}
+
+#body-text .price {
+	font-style: normal;
+}
+
+.slider {
+	list-style: none;
+	margin-left: 0;
+	padding: 0;
+	cursor: pointer;
+}
+.slider li {
+	margin-bottom: 1em;
+	margin-left: 0;
+	padding: 0;
+}
+
+.slider-selector img {
+	margin-right: 10px;
+	padding-bottom: 3px;
+	/*border-bottom: 3px solid black;*/
+	cursor: hand;
+}
+.slider-selector img.selected {
+	padding-bottom: 3px;
+	border-bottom: 3px solid  #588A37;
+	cursor: default;
+}
+
+#footer {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-style: italic;
+}
+
+</style>
 <title>The Slow Internet Review</title>
 </head>
 <body>
