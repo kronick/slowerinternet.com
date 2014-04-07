@@ -147,6 +147,12 @@ h1, h2, h3, h4 {
 	color: inherit;
 }
 
+.menu-item.menu-white .new {
+	background-color: #588A37;
+	font-style: italic;
+	color: white;
+}
+
 .menu-item.menu-green {
 	background-color: #588A37;
 	color: white;
@@ -202,11 +208,43 @@ h1, h2, h3, h4 {
 	padding: 40px;
 }
 
+#body-text h2,h3,h4 {
+	color: #5B6853;
+}
+
+#body-text h3 {
+	font-style: italic;
+}
+#body-text h2 a {
+	/*color: #5B6853;*/
+	text-decoration: none;
+}
+#body-text h2 a:hover {
+	/*color: ;*/
+}
+
+#body-text h2 .date {
+	font-size: 50%;
+}
+
 #body-text h2 {
 	margin-top: 2em;
 	margin-bottom: 0.5em;
-	color: #5B6853;
 	font-size: 30px;
+}
+
+#body-text h2.feature {
+	margin-top: 0em;
+}
+
+#body-text p.back {
+	float: right;
+	text-align: right;
+	line-height: 30px;
+}
+#body-text p.back a {
+	text-decoration: none;
+	font-style: italic;
 }
 
 #body-text p {
@@ -215,6 +253,14 @@ h1, h2, h3, h4 {
 	font-size: 20px;
 	line-height: 2em;
 	margin-top: 0;
+}
+
+#body-text p .readmore {
+	display: block;
+	text-align: right;
+	font-style: italic;
+	text-decoration: none;
+	font-weight: bolder;
 }
 
 #body-text p.intro {
