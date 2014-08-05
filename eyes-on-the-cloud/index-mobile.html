@@ -11,12 +11,16 @@ body {
 	width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+	background: url(background.jpg);
+	background-position: fixed;
+	background-size: 100% auto;
 }
 #mainvid {
 	width: 450px;
 	z-index: 0;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 20px;
 }
 
 #text-container {
@@ -25,6 +29,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 20px;
+	background-color: rgba(255,255,255,0.25);
 }
 
 #text-title {
@@ -110,6 +115,7 @@ function showText() {
 	<div id="text-title">
 	EYES ON THE CLOUD
 	</div>
+	<video src="glider_2.mp4" autoplay="autoplay" poster="poster.jpg" loop="loop" id="mainvid"><img src="poster.jpg" style="width: 450px;" /></video>
 	<div id="text">
 	<p>
 		<em>ANOTHER NETWORKED WORLD IS POSSIBLE</em>
@@ -134,7 +140,8 @@ function showText() {
 	</p>
 
 	<p class="nav">
-	<a href="#" onClick="showAbout()">ABOUT</a> - <a href="http://drone-daydream.slowerinternet.com/" target="_blank">DRONE DAYDREAM BLOG</a> - <a href="#" onClick="hideText()">HIDE TEXT</a>
+	<a href="#" onClick="showAbout(); return false;">ABOUT</a> - <a href="http://drone-daydream.slowerinternet.com/" target="_blank">DRONE DAYDREAM BLOG</a>
+	<br />
 	</p>
 
 	</div>
@@ -157,12 +164,10 @@ function showText() {
 
 
 	<p class="nav">
-		<-- <a href="#" onClick="showText()">BACK TO TEXT</a>
+		<-- <a href="#" onClick="showText(); return false;">BACK TO TEXT</a>
 	</p>
 	</div>
 </div>
-
-<video src="glider_2.mp4" autoplay="autoplay" loop="loop" id="mainvid"></video>
 
 </body>
 </html>
