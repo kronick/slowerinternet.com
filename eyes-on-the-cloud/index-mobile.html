@@ -1,0 +1,164 @@
+<html>
+<head>
+<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+<style>
+body {
+	margin: 20px;
+	font-family: Ubuntu;
+	font-weight: lighter;
+	text-align: center;
+}
+#mainvid {
+	width: 450px;
+	z-index: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#text-container {
+	text-align: left;
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+}
+
+#text-title {
+	font-size: 30px;
+	line-height: 25px;
+	font-family: Ubuntu;
+	font-weight: lighter;
+	font-style: italic;
+}
+
+#text {
+	
+	/*overflow-y: scroll;*/
+	/*line-height: 1.5em;*/
+}
+#text p {
+	margin-bottom: 0.5em;
+	
+}
+
+a {
+	color: black;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#text-about { 
+	display: none;
+	text-align: center;
+}
+
+.nav {
+	text-align: center;
+	font-style: italic;
+
+}
+
+#mute {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.25);
+	color: #AAA;
+	display: none;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+console.log(mobile)
+
+function hideText() {
+	$("#text-container").fadeOut(800);
+}
+
+function showAbout() {
+	$("#text-about").height($("#text").height());
+	$("#text").fadeOut(300, function() { $("#text-about").fadeIn(300);});
+}
+function showText() {
+	$("#text-about").fadeOut(300, function() { $("#text").fadeIn(300);});
+}
+
+</script>
+</head>
+<body>
+<div id="text-container">
+	<div id="text-title">
+	EYES ON THE CLOUD
+	</div>
+	<div id="text">
+	<p>
+		<em>ANOTHER NETWORKED WORLD IS POSSIBLE</em>
+	</p>
+
+	<p>
+		Floating silently on the breeze, a networked camera watches the systems evolving in the sky above, broadcasting only <a href="http://drone-daydream.slowerinternet.com/" target="_blank">free images</a> of swirling vapor. Its web is small, unreliable, perhaps <a href="http://www.christianforums.com/t7809635/#post65164894" target="_blank">uncommodifiable</a>.
+	</p>
+	<p>
+		<em>
+		Christopher Columbus in a <a href="http://quietbabylon.com/2013/mark-zuckerbergs-hoodie/" target="_blank">hoodie</a>. Spanish monarchs as the original VCs. A wave of colonialism refracts through modern technology's lens&mdash; solutionism as the new salvation, the gospel arrives this time by air rather than sea. The next billion data-souls may learn to see the Internet and its <a href="http://internet.org/" target="_blank">massive</a> <a href="http://www.google.com/loon/" target="_blank">corporate</a> <a href="http://titanaerospace.com/" target="_blank">providers</a> as <a href="http://www.nytimes.com/2014/08/03/opinion/sunday/evgeny-morozov-facebooks-gateway-drug.html" target="_blank">synonymous</a>, washing themselves in an ethereal downpour of information from an ever-present Cloud. Can they be <a href="http://www.theatlantic.com/technology/archive/2014/05/what-do-we-save-when-we-save-the-internet/370885/" target="_blank">saved</a>?
+		</em>
+	</p>
+	<p>
+		WE MUST NOT DISCONNECT
+		<br>
+		Let us cast our gaze upward to keep an eye on the Cloud.
+		<br>
+		Let us bask in the chance of intermittent signals.
+		<br>
+		Let us connect and daydream with the drones.
+	</p>
+
+	<p class="nav">
+	<a href="#" onClick="showAbout()">ABOUT</a> - <a href="http://drone-daydream.slowerinternet.com/" target="_blank">DRONE DAYDREAM BLOG</a> - <a href="#" onClick="hideText()">HIDE TEXT</a>
+	</p>
+
+	</div>
+
+	<div id="text-about">
+	<p>
+	<br><br><br>
+	</p>
+	<p>
+	<em><a href="http://www.slowerinternet.com/" target="_blank">THE CONSORTIUM FOR SLOWER INTERNET</a></em>
+	</p>
+
+	<p>
+	Gij&oacute;n, Spain - May 2014
+	</p>
+
+	<p>
+	<em>Project produced in the context of the Call Next Things 2014-Personal from Telef&oacute;nica R&D and Plataforma 0. Production Centre of <a href="http://www.laboralcentrodearte.org/" target="_blank">LABoral Centro de Arte y Creaci&oacute;n Industrial</a></em>
+	</p>
+
+
+	<p class="nav">
+		<-- <a href="#" onClick="showText()">BACK TO TEXT</a>
+	</p>
+	</div>
+</div>
+
+<video src="glider_2.mp4" autoplay="autoplay" loop="loop" id="mainvid"></video>
+
+</body>
+</html>
