@@ -7,6 +7,8 @@ body {
 	overflow: hidden;
 	font-family: Ubuntu;
 	font-weight: lighter;
+	background: url(background.jpg) no-repeat;
+	background-size: 100% auto;
 }
 #mainvid {
 	/*width: 100%;*/
@@ -101,7 +103,7 @@ a:hover {
 <script src="jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
 mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-console.log(mobile)
+if(mobile) window.location = "index-mobile.html"
 
 var tryintomute = false;
 var mutetimeout = null;
