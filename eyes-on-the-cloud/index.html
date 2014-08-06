@@ -170,7 +170,12 @@ function showText() {
 </script>
 </head>
 <body>
-<video src="glider_2.mp4" autoplay="autoplay" loop="loop" id="mainvid"></video>
+	<video autoplay loop id="mainvid">
+		<source src="glider_2.mp4" type='video/mp4'>
+		<source src="glider_2.webm" type='video/webm'>
+		<source src="glider_2.ogv" type='video/ogg'>
+		<img src="poster.jpg" style="width: 450px;" />
+	</video>
 
 <div id="text-container">
 	<div id="text-title">

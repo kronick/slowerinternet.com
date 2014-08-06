@@ -116,7 +116,12 @@ function showText() {
 	<div id="text-title">
 	EYES ON THE CLOUD
 	</div>
-	<video src="glider_2.mp4" autoplay="autoplay" poster="poster.jpg" loop="loop" id="mainvid"><img src="poster.jpg" style="width: 450px;" /></video>
+	<video autoplay loop id="mainvid">
+		<source src="glider_2.mp4" type='video/mp4'>
+		<source src="glider_2.webm" type='video/webm'>
+		<source src="glider_2.ogv" type='video/ogg'>
+		<img src="poster.jpg" style="width: 450px;" />
+	</video>
 	<div id="text">
 	<p>
 		<em>ANOTHER NETWORKED WORLD IS POSSIBLE</em>
