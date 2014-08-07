@@ -3,8 +3,18 @@
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 <link href="style.css" rel="stylesheet" type="text/css">
 
-<script src="https://s3.amazonaws.com/he3/helium.js" id="Helium" data-key="dwk8ud9aal0fjq5em6"></script>
 <title>The Consortium for Slower Internet</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	console.log("READ")
+	$(".menu-item").each(function(idx, el) {
+		$el = $(el)
+		console.log(el)
+		$el.click(function(e, f) { window.location = $(e.target).find("a").attr("href"); })
+	});
+});
+</script>
 </head>
 <body>
 <div id="logo-banner">
@@ -27,20 +37,20 @@
 		<li class="menu-item menu-white menu-principles">
 			<a href="principles.html">Principles for Slower Internet</a>
 		</li>
-		<li class="menu-item menu-green menu-cyberneticmeadow">
-			<a href="cybernetic-meadow.html">The Cybernetic Meadow Collection</a>
-		</li>
-		<li class="menu-item menu-white menu-research">
-			<a href="research.html">Consortium Research</a> <span class="new">(updated)</span>
-		</li>
 		<li class="menu-item menu-green menu-networksnewtowns">
 			<a href="networksnewtowns.html">Networks + New Towns</a>
 		</li>	
+		<li class="menu-item menu-white menu-eyes">
+			<a href="eyes-on-the-cloud/">Eyes on<br>the Cloud</a><br />
+		</li>
+		<li class="menu-item menu-white menu-research">
+			<a href="research.html">Consortium Research</a>
+		</li>
+		<li class="menu-item menu-green menu-cyberneticmeadow">
+			<a href="cybernetic-meadow.html">The Cybernetic Meadow Collection</a>
+		</li>
 		<li class="menu-item menu-white menu-review">
 			<a href="review.html">The Slow Internet Review</a>
-		</li>
-		<li class="menu-item menu-green menu-freespace">
-			<!--<a href="about.html">About</a>-->
 		</li>
 
 		<!--

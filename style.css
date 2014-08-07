@@ -195,6 +195,9 @@ h1, h2, h3, h4 {
 .menu-item.menu-research {
 	background-image: url(research-bg.jpg);
 }
+.menu-item.menu-eyes {
+	background-image: url(eyes-bg.jpg);
+}
 .menu-item.menu-freespace {
 	background-image: url(freespace-bg.jpg);
 }
